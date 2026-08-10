@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Jobs</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e293b;
+        }
+
+        .job {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .job h2 {
+            color: #2563eb;
+        }
+
+        .job p {
+            margin: 8px 0;
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #2563eb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Jobs</h1>
+
+    <div id="jobList"></div>
+
+    <a class="back" href="dashboard.html">← Back to Dashboard</a>
+
+    <script>
+        const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        const jobList = document.getElementById("jobList");
+
+        if (jobs.length === 0) {
+            jobList.innerHTML =
+                "<p style='text-align:center;'>No jobs posted yet.</p>";
+        } else {
+            jobs.forEach(function(job) {
+                jobList.innerHTML += `
+                    <div class="job">
+                        <h2>${job.title}</h2>
+                        <p><strong>Company:</strong> ${job.company}</p>
+                        <p><strong>Location:</strong> ${job.location}</p>
+                        <p><strong>Salary:</strong> ${job.salary}</p>
+                        <p><strong>Skills:</strong> ${job.skills}</p>
+                        <p><strong>Description:</strong> ${job.description}</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
+
+</body>
+</html>

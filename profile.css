@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+.profile-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.profile-header {
+    margin-bottom: 25px;
+}
+
+.profile-header h1 {
+    font-size: 32px;
+    color: #172554;
+    margin-bottom: 8px;
+}
+
+.profile-header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.profile-card h2 {
+    color: #2563eb;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+#profileForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+.full-width {
+    grid-column: 1 / 3;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    grid-column: 2;
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-self: end;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Mobile view */
+@media (max-width: 700px) {
+
+    .profile-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    #profileForm {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: 1;
+    }
+
+    button {
+        grid-column: 1;
+        justify-self: stretch;
+    }
+}

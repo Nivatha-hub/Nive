@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="post-job.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Post a Job</h1>
+        <p>Enter the job details below</p>
+
+        <form id="jobForm">
+
+            <label for="jobTitle">Job Title</label>
+            <input id="jobTitle" type="text" placeholder="Enter job title" required>
+
+            <label for="companyName">Company Name</label>
+            <input id="companyName" type="text" placeholder="Enter company name" required>
+
+            <label for="jobLocation">Location</label>
+            <input id="jobLocation" type="text" placeholder="Enter location" required>
+
+            <label for="salary">Salary</label>
+            <input id="salary" type="text" placeholder="Example: ₹4 - ₹6 LPA">
+
+            <label for="skills">Required Skills</label>
+            <input id="skills" type="text" placeholder="Example: Java, SQL, HTML">
+
+            <label for="jobDescription">Job Description</label>
+            <textarea id="jobDescription" rows="6" placeholder="Enter job description" required></textarea>
+
+            <button type="submit">Post Job</button>
+
+        </form>
+
+        <a href="dashboard.html">← Back to Dashboard</a>
+
+    </div>
+
+<script>
+document.getElementById("jobForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const job = {
+        title: document.getElementById("jobTitle").value.trim(),
+        company: document.getElementById("companyName").value.trim(),
+        location: document.getElementById("jobLocation").value.trim(),
+        salary: document.getElementById("salary").value.trim(),
+        skills: document.getElementById("skills").value.trim(),
+        description: document.getElementById("jobDescription").value.trim()
+    };
+
+    if (!job.title || !job.company || !job.location || !job.description) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+    const duplicateJob = jobs.some(existingJob => {
+        return (
+            (existingJob.title || "").trim().toLowerCase() === job.title.toLowerCase() &&
+            (existingJob.company || "").trim().toLowerCase() === job.company.toLowerCase() &&
+            (existingJob.location || "").trim().toLowerCase() === job.location.toLowerCase()
+        );
+    });
+
+    if (duplicateJob) {
+        alert("This job already exists. Duplicate jobs are not allowed.");
+        return;
+    }
+
+    jobs.push(job);
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+
+    alert("Job posted successfully!");
+
+    window.location.href = "my-jobs.html";
+});
+</script>
+
+</body>
+</html>

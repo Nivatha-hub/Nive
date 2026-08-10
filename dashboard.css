@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+.sidebar {
+    position: fixed;
+    width: 230px;
+    height: 100vh;
+    background: #1e293b;
+    padding: 25px 15px;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background: #334155;
+}
+
+.main-content {
+    margin-left: 230px;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    color: #1e293b;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.card h3 {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.section {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #f1f5f9;
+}

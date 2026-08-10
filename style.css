@@ -15,9 +15,6 @@ body {
     display: flex;
 }
 
-
-/* LEFT SIDE */
-
 .login-left {
     width: 50%;
     background: #172554;
@@ -68,9 +65,6 @@ body {
     color: #e0f2fe;
 }
 
-
-/* RIGHT SIDE */
-
 .login-right {
     width: 50%;
     display: flex;
@@ -99,9 +93,6 @@ body {
     margin-bottom: 30px;
 }
 
-
-/* FORM */
-
 #loginForm {
     display: flex;
     flex-direction: column;
@@ -127,9 +118,6 @@ body {
     border-color: #2563eb;
 }
 
-
-/* OPTIONS */
-
 .login-options {
     display: flex;
     justify-content: space-between;
@@ -151,9 +139,6 @@ body {
     text-decoration: none;
 }
 
-
-/* BUTTON */
-
 button {
     background: #2563eb;
     color: white;
@@ -169,9 +154,6 @@ button:hover {
     background: #1d4ed8;
 }
 
-
-/* SIGNUP */
-
 .signup {
     text-align: center;
     margin-top: 25px;
@@ -184,9 +166,6 @@ button:hover {
     text-decoration: none;
     font-weight: bold;
 }
-
-
-/* MOBILE */
 
 @media (max-width: 800px) {
 
